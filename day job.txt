@@ -4,3 +4,6 @@ TCP三次握手报文分析；
 
 RTSP音视频同步
 wireshark抓包原理
+
+AVpacket 的pts dts 设置以及作用
+makefile 内容 linux系统安装
