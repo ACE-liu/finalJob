@@ -1,0 +1,9 @@
+语法： ：NMAKE [options] [macros] [targets] [@commandfile]
+
+Makefile的组成部分包括：成文件包含：
+描述块 (description block)
+命令
+宏
+推理规则 (inference rules)
+点指令
+预处理指令

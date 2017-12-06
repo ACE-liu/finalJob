@@ -1,0 +1,39 @@
+meta
+语法：meta on|off
+上下文：rtmp, server, application
+描述：切换发送元数据到客户端。默认为 on。
+meta off;
+interleave
+语法：interleave on|off
+上下文：rtmp, server, application
+描述：切换交叉模式。在这个模式下，音频和视频数据会在同一个 RTMP chunk 流中传输。默认为 off。
+interleave on;
+wait_key
+语法：wait_key on|off
+上下文：rtmp, server, application
+描述：使视频流从一个关键帧开始。默认为 off。
+wait_key on;
+
+wait_video
+语法：wait_video on|off
+上下文：rtmp, server, application
+描述：在第一个视频帧发送之前禁用音频。默认为 off。可以和 wait_key 进行组合以使客户端可以收到具有所有其他数据的视频关键帧。然而这通常增加连接延迟。您可以通过在编码器中调整关键帧间隔来减少延迟。
+wait_video on;
+
+sync
+语法：sync timeout
+上下文：rtmp, server, application
+描述：同步音频和视频流。如果用户带宽不足以接收发布率，服务器会丢弃一些帧。这将导致同步问题。当时间戳差超过 sync 指定的值，将会发送一个绝对帧来解决这个问题。默认为 300 ms。
+sync 10ms;
+
+record_suffix _recorded.flv;
+录制后缀可以匹配 strftime 格式。以下指令
+record_suffix -%d-%b-%y-%T.flv
+将会产生形如 mystream-24-Apr-13-18:23:38.flv 的文件。所有支持 strftime 格式的选项可以在 strftime man page 里进行查找。
+record_unique
+语法：record_unique on|off
+上下文：rtmp, server, application, recorder
+描述：是否添加时间戳到录制文件。否则的话同样的文件在每一次新的录制发生时将被重写。默认为 off。
+record_unique on;
+
+

@@ -1,0 +1,6 @@
+
+PTS :presentation time stamp
+DTS:decode time stamps
+FLV 数据包头的timestamp 为decode time stamp 
+CompositionTime 每个视频tag的第14~16字节（表示PTS相对于DTS的偏移值 ）
+CompositionTime 单位为ms  显示时间(PTS) = 解码时间（tag的第5~8字节） +  CompositionTime

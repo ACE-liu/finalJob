@@ -1,0 +1,3 @@
+string.Format(":sout=#duplicate{{dst=\'transcode{{vcodec=h264,venc=x264{{keyint=25,idrinit=25,bframes=0,ref=1,hrd=cbr,crf=28,vb=4500}},fps=25,scale=×Ô¶¯,audio-sync}}:std{{access=rtmp,mux=ffmpeg{{mux=flv}},dst=rtmp://{0}:{1}/{2}/{3}}}\',dst=display}}"
+                , ip, port, app, streamName);
+
